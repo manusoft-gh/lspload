@@ -21,6 +21,10 @@
 #define ads_queueexpr zds_queueexpr
 #endif
 
+#ifdef _GRXTARGET
+#define acrxEntryPoint gcrxEntryPoint
+#endif
+
 //macros to use version independent ACHAR type
 #if (_ACADTARGET <= 16)
 typedef char ACHAR;

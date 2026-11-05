@@ -3,7 +3,12 @@
 Maintainer/agent notes for this repository.
 
 Product version is the single line in `VERSION`. Do not invent a second
-version field (including inside `hosts.json` when that file exists).
+version field (including inside `hosts.json`).
+
+After any `hosts.json` edit, run `pwsh -File scripts/sync-from-hosts.ps1`
+then `validate-hosts.ps1` **before** `cmake --preset …`. CMake does not parse
+JSON; it includes generated `cmake/LspLoadHosts.cmake`. Do not hand-edit that
+file. Do not emit Inno fragments from sync (separate PR).
 
 ## Skill (later)
 

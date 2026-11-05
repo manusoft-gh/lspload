@@ -1,0 +1,194 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 24,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "OFF",
+        "LSPLOAD_SHIP_ONLY": "ON",
+        "LSPLOAD_PER_FAMILY_MAX": "0",
+        "LSPLOAD_TARGETS": ""
+      }
+    },
+    {
+      "name": "base-vs2026",
+      "hidden": true,
+      "inherits": "base",
+      "displayName": "VS2026 base (Visual Studio 18 2026)",
+      "generator": "Visual Studio 18 2026"
+    },
+    {
+      "name": "vs2022-dev-x64",
+      "displayName": "VS2022 x64 dev — latest per family, toolset v141–v143 (not ARX.26)",
+      "inherits": "base",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "OFF",
+        "LSPLOAD_PER_FAMILY_MAX": "1",
+        "LSPLOAD_MIN_TOOLSET": "v141",
+        "LSPLOAD_MAX_TOOLSET": "v143"
+      }
+    },
+    {
+      "name": "vs2022-dev-win32",
+      "displayName": "VS2022 Win32 dev — historic x86 ship rows",
+      "inherits": "base",
+      "architecture": {
+        "value": "Win32",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "OFF"
+      }
+    },
+    {
+      "name": "vs2022-full-x64",
+      "displayName": "VS2022 x64 full — every ship:true x64 with toolset ≤ v143 (not ARX.26)",
+      "inherits": "base",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "ON",
+        "LSPLOAD_MAX_TOOLSET": "v143"
+      }
+    },
+    {
+      "name": "vs2022-full-win32",
+      "displayName": "VS2022 Win32 full — every ship:true x86 row",
+      "inherits": "base",
+      "architecture": {
+        "value": "Win32",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "ON"
+      }
+    },
+    {
+      "name": "vs2026-dev-x64",
+      "displayName": "VS2026 x64 dev — latest v145+ per family (ARX.26)",
+      "inherits": "base-vs2026",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "OFF",
+        "LSPLOAD_PER_FAMILY_MAX": "1",
+        "LSPLOAD_MIN_TOOLSET": "v145"
+      }
+    },
+    {
+      "name": "vs2026-full-x64",
+      "displayName": "VS2026 x64 full — every ship:true v145+ x64 (ARX.26 required for packaging)",
+      "inherits": "base-vs2026",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "ON",
+        "LSPLOAD_MIN_TOOLSET": "v145"
+      }
+    },
+    {
+      "name": "vs2022-brx-latest",
+      "displayName": "VS2022 — BRX.27.x64 only",
+      "inherits": "base",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "OFF",
+        "LSPLOAD_TARGETS": "BRX.27.x64"
+      }
+    },
+    {
+      "name": "vs2022-zrx-latest",
+      "displayName": "VS2022 — ZRX.2025.x64 only",
+      "inherits": "base",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "OFF",
+        "LSPLOAD_TARGETS": "ZRX.2025.x64"
+      }
+    },
+    {
+      "name": "vs2026-arx-latest",
+      "displayName": "VS2026 — ARX.26.x64 only (v145)",
+      "inherits": "base-vs2026",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "LSPLOAD_SIGN": "OFF",
+        "LSPLOAD_TARGETS": "ARX.26.x64"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "vs2022-dev-x64-release",
+      "configurePreset": "vs2022-dev-x64",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2022-dev-win32-release",
+      "configurePreset": "vs2022-dev-win32",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2022-full-x64-release",
+      "configurePreset": "vs2022-full-x64",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2022-full-win32-release",
+      "configurePreset": "vs2022-full-win32",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2026-dev-x64-release",
+      "configurePreset": "vs2026-dev-x64",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2026-full-x64-release",
+      "configurePreset": "vs2026-full-x64",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2022-brx-latest-release",
+      "configurePreset": "vs2022-brx-latest",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2022-zrx-latest-release",
+      "configurePreset": "vs2022-zrx-latest",
+      "configuration": "Release"
+    },
+    {
+      "name": "vs2026-arx-latest-release",
+      "configurePreset": "vs2026-arx-latest",
+      "configuration": "Release"
+    }
+  ]
+}
