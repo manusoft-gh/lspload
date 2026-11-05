@@ -18,7 +18,7 @@ if(_lspload_multi)
 endif()
 
 # Flat PE dir: build/<preset>/out/<CONFIG>/<outputName><ext>
-foreach(_lspload_cfg IN ITEMS Debug Release RelWithDebInfo MinSizeRel)
+foreach(_lspload_cfg IN ITEMS Debug Release)
   string(TOUPPER "${_lspload_cfg}" _lspload_cfg_u)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${_lspload_cfg_u} "${CMAKE_BINARY_DIR}/out/${_lspload_cfg}")
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${_lspload_cfg_u} "${CMAKE_BINARY_DIR}/out/${_lspload_cfg}")
