@@ -90,14 +90,30 @@ if ($arx15.Count -eq 1) {
     }
 }
 
-# BRX CURVER
+# BRX CURVER; detect is product key only (gold does not require \Applications).
+function Get-DetectKey([string]$family, [string]$hostKey, [string]$productKey) {
+    $base = "$hostKey\$productKey"
+    if ($family -eq 'BRX') { return $base }
+    return "$base\Applications"
+}
+
 $brx = @($shipRows | Where-Object { [string]$_.family -eq 'BRX' })
 foreach ($row in $brx) {
     foreach ($p in @($row.reg.probes)) {
         if ([string]$p.curVerName -ne 'CURVER') {
             Add-Err "$($row.id) curVerName is '$($p.curVerName)' (expected CURVER)"
         }
+        $detect = Get-DetectKey ([string]$row.family) ([string]$p.key) 'en_US'
+        if ($detect -like '*\Applications') {
+            Add-Err "$($row.id) BRX detect key must not require Applications (got $detect)"
+        }
     }
+}
+
+$arx16 = @($shipRows | Where-Object { [string]$_.id -eq 'ARX.16' })[0]
+$arxDetect = Get-DetectKey 'ARX' ([string]@($arx16.reg.probes)[0].key) 'ACAD-4001:409'
+if ($arxDetect -notlike '*\Applications') {
+    Add-Err "ARX detect key must still require Applications (got $arxDetect)"
 }
 
 # preferred64 skips when not Win64
@@ -132,6 +148,29 @@ else {
     }
     if ($codeText -notmatch 'DeleteDemandloadKeys\(') {
         Add-Err 'DeleteAllDemandloadKeys must call DeleteDemandloadKeys'
+    }
+    if ($codeText -notmatch 'DetectRequiresApps') {
+        Add-Err 'HostsCode.iss must encode DetectRequiresApps (BRX detect vs write split)'
+    }
+    if ($codeText -notmatch "if HostProbes\[I\]\.DetectRequiresApps then") {
+        Add-Err 'IsAvailable must append \\Applications only when DetectRequiresApps'
+    }
+    $brxProbeLines = [regex]::Matches($codeText, "SetHostProbe\([^;]*'BRX'[^;]*\);")
+    if ($brxProbeLines.Count -eq 0) {
+        Add-Err 'HostsCode.iss missing BRX SetHostProbe lines'
+    }
+    foreach ($m in $brxProbeLines) {
+        if ($m.Value -notmatch ',\s*False\);\s*$') {
+            Add-Err "BRX probe must end DetectRequiresApps=False: $($m.Value)"
+        }
+    }
+    $arxProbe = [regex]::Match($codeText, "SetHostProbe\([^;]*'ARX', '16'[^;]*\);")
+    if (-not $arxProbe.Success -or $arxProbe.Value -notmatch ',\s*True\);\s*$') {
+        Add-Err 'ARX probe must keep DetectRequiresApps=True'
+    }
+    $appsWrite = @($codeText -split "`r?`n" | Where-Object { $_ -match 'AppsKey\s*:=' })
+    if ($appsWrite.Count -eq 0 -or ($appsWrite -join ' ') -notmatch 'Applications') {
+        Add-Err 'SetupDemandload must still write Applications for every family including BRX'
     }
 }
 
