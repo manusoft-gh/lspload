@@ -412,13 +412,8 @@ function(lspload_add_host id)
       VERBATIM)
   endif()
 
-  if(_family STREQUAL "ZRX")
-    file(TO_NATIVE_PATH "${_sdk_root}/Tools/ZRXCheck/ZRXCheck.exe" _zrxcheck_n)
-    add_custom_command(TARGET ${_target} POST_BUILD
-      COMMAND cmd.exe /c IF EXIST "${_zrxcheck_n}" "${_zrxcheck_n}" "$<TARGET_FILE:${_target}>"
-      COMMENT "ZRXCheck ${id} (if present)"
-      VERBATIM)
-  endif()
+  # Do not run SDK ZRXCheck.exe. Historic Win32 ZRXCheck (2014/2015) AVs
+  # (0xC0000005) and overwrites the stub (no MZ; Authenticode UnknownError).
 endfunction()
 
 function(lspload_add_selected_hosts)
