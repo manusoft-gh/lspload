@@ -1,0 +1,52 @@
+# Build / CMake
+build/
+out/
+CMakeUserPresets.json
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+*.obj
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+*.res
+*.pch
+*.tlog
+*.lastbuildstate
+*.recipe
+*.iobj
+*.ipdb
+*.log
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+
+# Packaging / rolling gold overlay
+dist/
+InnoSetup/LspLoad/
+gold/*.arx
+gold/*.brx
+gold/*.zrx
+gold/*.grx
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+*.bak
+.vscode/
+*.code-workspace
