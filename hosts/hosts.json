@@ -1,0 +1,3194 @@
+{
+  "families": {
+    "ARX": {
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "entry": "acrx"
+    },
+    "BRX": {
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "entry": "acrx"
+    },
+    "ZRX": {
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "entry": "zcrx"
+    },
+    "GRX": {
+      "ext": ".grx",
+      "def": "src/GrxExports.def",
+      "entry": "gcrx"
+    }
+  },
+  "targets": [
+    {
+      "id": "ARX.15",
+      "family": "ARX",
+      "version": "15",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.15",
+      "toolset": "v60",
+      "sdkEnv": "ARX2000",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acedapi.lib",
+        "acrx15.lib",
+        "acutil15.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=15"
+      ],
+      "characterSet": "MultiByte",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2000",
+        "AutoCAD 2000i",
+        "AutoCAD 2002"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "acadR15",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R15.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKLM32",
+            "appsHive": "HKLM32",
+            "writeRoot": "hklm32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.16",
+      "family": "ARX",
+      "version": "16",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.16",
+      "toolset": "v70",
+      "sdkEnv": "ARX2004",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acedapi.lib",
+        "acdb16.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=16"
+      ],
+      "characterSet": "MultiByte",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2004",
+        "AutoCAD 2005",
+        "AutoCAD 2006"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R16.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R16.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R16.2",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.17.x64",
+      "family": "ARX",
+      "version": "17",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.17.x64",
+      "toolset": "v80",
+      "sdkEnv": "ARX2008X64",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acedapi.lib",
+        "acdb17.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2007",
+        "AutoCAD 2008",
+        "AutoCAD 2009"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R17.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R17.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R17.2",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.17",
+      "family": "ARX",
+      "version": "17",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.17",
+      "toolset": "v80",
+      "sdkEnv": "ARX2007",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acedapi.lib",
+        "acdb17.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2007",
+        "AutoCAD 2008",
+        "AutoCAD 2009"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R17.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R17.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R17.2",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.18.x64",
+      "family": "ARX",
+      "version": "18",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.18.x64",
+      "toolset": "v90",
+      "sdkEnv": "ARX2010",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acedapi.lib",
+        "acdb18.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2010",
+        "AutoCAD 2011",
+        "AutoCAD 2012"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R18.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R18.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R18.2",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.18",
+      "family": "ARX",
+      "version": "18",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.18",
+      "toolset": "v90",
+      "sdkEnv": "ARX2010",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acedapi.lib",
+        "acdb18.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2010",
+        "AutoCAD 2011",
+        "AutoCAD 2012"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R18.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R18.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R18.2",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.19.x64",
+      "family": "ARX",
+      "version": "19",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.19.x64",
+      "toolset": "v100",
+      "sdkEnv": "ARX2013",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb19.lib",
+        "accore.lib",
+        "ac1st19.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=19"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2013",
+        "AutoCAD 2014"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R19.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R19.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.19",
+      "family": "ARX",
+      "version": "19",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.19",
+      "toolset": "v100",
+      "sdkEnv": "ARX2013",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb19.lib",
+        "accore.lib",
+        "ac1st19.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=19"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2013",
+        "AutoCAD 2014"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R19.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R19.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.20.x64",
+      "family": "ARX",
+      "version": "20",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.20.x64",
+      "toolset": "v110_xp",
+      "sdkEnv": "ARX2015",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb20.lib",
+        "accore.lib",
+        "ac1st20.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2015",
+        "AutoCAD 2016"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R20.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R20.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.20",
+      "family": "ARX",
+      "version": "20",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.20",
+      "toolset": "v110_xp",
+      "sdkEnv": "ARX2015",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb20.lib",
+        "accore.lib",
+        "ac1st20.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2015",
+        "AutoCAD 2016"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R20.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R20.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.21.x64",
+      "family": "ARX",
+      "version": "21",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.21.x64",
+      "toolset": "v140",
+      "sdkEnv": "ARX2017",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb21.lib",
+        "accore.lib",
+        "ac1st21.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=21"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2017"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R21.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.21",
+      "family": "ARX",
+      "version": "21",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.21",
+      "toolset": "v140",
+      "sdkEnv": "ARX2017",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb21.lib",
+        "accore.lib",
+        "ac1st21.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=21"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2017"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R21.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.22.x64",
+      "family": "ARX",
+      "version": "22",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.22.x64",
+      "toolset": "v140",
+      "sdkEnv": "ARX2018",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb22.lib",
+        "accore.lib",
+        "ac1st22.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2018"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R22.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.22",
+      "family": "ARX",
+      "version": "22",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.22",
+      "toolset": "v140",
+      "sdkEnv": "ARX2018",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb22.lib",
+        "accore.lib",
+        "ac1st22.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2018"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R22.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.23.x64",
+      "family": "ARX",
+      "version": "23",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.23.x64",
+      "toolset": "v141",
+      "sdkEnv": "ARX2019",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb23.lib",
+        "accore.lib",
+        "ac1st23.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=23"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2019",
+        "AutoCAD 2020"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R23.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R23.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.23",
+      "family": "ARX",
+      "version": "23",
+      "arch": "x86",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.23",
+      "toolset": "v141",
+      "sdkEnv": "ARX2019",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb23.lib",
+        "accore.lib",
+        "ac1st23.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=23"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2019",
+        "AutoCAD 2020"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R23.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R23.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.24.x64",
+      "family": "ARX",
+      "version": "24",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.24.x64",
+      "toolset": "v142",
+      "sdkEnv": "ARX2021",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb24.lib",
+        "accore.lib",
+        "ac1st24.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=24"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2021",
+        "AutoCAD 2022",
+        "AutoCAD 2023",
+        "AutoCAD 2024"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R24.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R24.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R24.2",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R24.3",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.25.x64",
+      "family": "ARX",
+      "version": "25",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.25.x64",
+      "toolset": "v142",
+      "sdkEnv": "ARX2025",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb25.lib",
+        "accore.lib",
+        "ac1st25.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=25"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2025",
+        "AutoCAD 2026"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R25.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R25.1",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ARX.26.x64",
+      "family": "ARX",
+      "version": "26",
+      "arch": "x64",
+      "ext": ".arx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.ARX.26.x64",
+      "toolset": "v145",
+      "sdkEnv": "ARX2027",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "acad.lib",
+        "rxapi.lib",
+        "acdb26.lib",
+        "accore.lib",
+        "ac1st26.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=26"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": "17",
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "AutoCAD 2027"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Autodesk\\AutoCAD\\R26.0",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.9",
+      "family": "BRX",
+      "version": "9",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.9",
+      "toolset": "v80",
+      "sdkEnv": "BRX9",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "brx.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V9"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V9",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKCU32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.10",
+      "family": "BRX",
+      "version": "10",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.10",
+      "toolset": "v80",
+      "sdkEnv": "BRX10",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "brx10.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V10"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V10",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.11",
+      "family": "BRX",
+      "version": "11",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.11",
+      "toolset": "v80",
+      "sdkEnv": "BRX11",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "brx11.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V11"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V11",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.12",
+      "family": "BRX",
+      "version": "12",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.12",
+      "toolset": "v80",
+      "sdkEnv": "BRX12",
+      "sdkInc": [
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "brx12.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V12"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V12",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.13.x64",
+      "family": "BRX",
+      "version": "13",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.13.x64",
+      "toolset": "v100",
+      "sdkEnv": "BRX13",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "brx13.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V13"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V13x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.13",
+      "family": "BRX",
+      "version": "13",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.13",
+      "toolset": "v100",
+      "sdkEnv": "BRX13",
+      "sdkInc": [
+        "Inc32",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib32"
+      ],
+      "libs": [
+        "brx13.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V13"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V13",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.14.x64",
+      "family": "BRX",
+      "version": "14",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.14.x64",
+      "toolset": "v100",
+      "sdkEnv": "BRX14",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX14.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V14"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V14x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.14",
+      "family": "BRX",
+      "version": "14",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.14",
+      "toolset": "v100",
+      "sdkEnv": "BRX14",
+      "sdkInc": [
+        "Inc32",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib32"
+      ],
+      "libs": [
+        "BRX14.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V14"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V14",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.15.x64",
+      "family": "BRX",
+      "version": "15",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.15.x64",
+      "toolset": "v100",
+      "sdkEnv": "BRX15",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX15.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V15"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V15x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.15",
+      "family": "BRX",
+      "version": "15",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.15",
+      "toolset": "v100",
+      "sdkEnv": "BRX15",
+      "sdkInc": [
+        "Inc32",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib32"
+      ],
+      "libs": [
+        "BRX15.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V15"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V15",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.16.x64",
+      "family": "BRX",
+      "version": "16",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.16.x64",
+      "toolset": "v120",
+      "sdkEnv": "BRX16",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX16.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V16"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V16x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.16",
+      "family": "BRX",
+      "version": "16",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.16",
+      "toolset": "v120",
+      "sdkEnv": "BRX16",
+      "sdkInc": [
+        "Inc32",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib32"
+      ],
+      "libs": [
+        "BRX16.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V16"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V16",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.17.x64",
+      "family": "BRX",
+      "version": "17",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.17.x64",
+      "toolset": "v120",
+      "sdkEnv": "BRX17",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX17.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V17"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V17x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.17",
+      "family": "BRX",
+      "version": "17",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.17",
+      "toolset": "v120",
+      "sdkEnv": "BRX17",
+      "sdkInc": [
+        "Inc32",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib32"
+      ],
+      "libs": [
+        "BRX17.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V17"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V17",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.18.x64",
+      "family": "BRX",
+      "version": "18",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.18.x64",
+      "toolset": "v120",
+      "sdkEnv": "BRX18",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX18.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V18"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V18x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.18",
+      "family": "BRX",
+      "version": "18",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.18",
+      "toolset": "v120",
+      "sdkEnv": "BRX18",
+      "sdkInc": [
+        "Inc32",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib32"
+      ],
+      "libs": [
+        "BRX18.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V18"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V18",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.19.x64",
+      "family": "BRX",
+      "version": "19",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.19.x64",
+      "toolset": "v141",
+      "sdkEnv": "BRX19",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX19.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V19"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V19x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.19",
+      "family": "BRX",
+      "version": "19",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.19",
+      "toolset": "v141",
+      "sdkEnv": "BRX19",
+      "sdkInc": [
+        "Inc32",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib32"
+      ],
+      "libs": [
+        "BRX19.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V19"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V19",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.20.x64",
+      "family": "BRX",
+      "version": "20",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.20.x64",
+      "toolset": "v141",
+      "sdkEnv": "BRX20",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX20.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V20"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V20x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.20",
+      "family": "BRX",
+      "version": "20",
+      "arch": "x86",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.20",
+      "toolset": "v141",
+      "sdkEnv": "BRX20",
+      "sdkInc": [
+        "Inc32",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib32"
+      ],
+      "libs": [
+        "BRX20.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V20"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V20",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.21.x64",
+      "family": "BRX",
+      "version": "21",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.21.x64",
+      "toolset": "v141",
+      "sdkEnv": "BRX21",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX21.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V21"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V21x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.22.x64",
+      "family": "BRX",
+      "version": "22",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.22.x64",
+      "toolset": "v142",
+      "sdkEnv": "BRX22",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX22.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V22"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V22x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.23.x64",
+      "family": "BRX",
+      "version": "23",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.23.x64",
+      "toolset": "v142",
+      "sdkEnv": "BRX23",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX23.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V23"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V23x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.24.x64",
+      "family": "BRX",
+      "version": "24",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.24.x64",
+      "toolset": "v142",
+      "sdkEnv": "BRX24",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX24.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V24"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V24x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.25.x64",
+      "family": "BRX",
+      "version": "25",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.25.x64",
+      "toolset": "v142",
+      "sdkEnv": "BRX25",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX25.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V25"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V25x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.26.x64",
+      "family": "BRX",
+      "version": "26",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.26.x64",
+      "toolset": "v143",
+      "sdkEnv": "BRX26",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX26.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V26"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V26x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "BRX.27.x64",
+      "family": "BRX",
+      "version": "27",
+      "arch": "x64",
+      "ext": ".brx",
+      "def": "src/RxExports.def",
+      "outputName": "LspLoad.BRX.27.x64",
+      "toolset": "v143",
+      "sdkEnv": "BRX27",
+      "sdkInc": [
+        "Inc64",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib64"
+      ],
+      "libs": [
+        "BRX27.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=26"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "BricsCAD V27"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\Bricsys\\Bricscad\\V27x64",
+            "curVerName": "CURVER",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2014",
+      "family": "ZRX",
+      "version": "2014",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2014",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2014",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17",
+        "_ZRXTARGET=14"
+      ],
+      "characterSet": "MultiByte",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2014"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2014",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2015",
+      "family": "ZRX",
+      "version": "2015",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2015",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2015",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=17",
+        "_ZRXTARGET=15"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2015"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2015",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2017.x64",
+      "family": "ZRX",
+      "version": "2017",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2017.x64",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2017",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18",
+        "_ZRXTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2017"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2017",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2017",
+      "family": "ZRX",
+      "version": "2017",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2017",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2017",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18",
+        "_ZRXTARGET=17"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2017"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2017",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2018.x64",
+      "family": "ZRX",
+      "version": "2018",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2018.x64",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2018",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18",
+        "_ZRXTARGET=18"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2018"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2018",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2018",
+      "family": "ZRX",
+      "version": "2018",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2018",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2018",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18",
+        "_ZRXTARGET=18"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2018"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2018",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2019.x64",
+      "family": "ZRX",
+      "version": "2019",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2019.x64",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2019",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18",
+        "_ZRXTARGET=19"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2019"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2019",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2019",
+      "family": "ZRX",
+      "version": "2019",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2019",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2019",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18",
+        "_ZRXTARGET=19"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2019"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2019",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2020.x64",
+      "family": "ZRX",
+      "version": "2020",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2020.x64",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2020",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18",
+        "_ZRXTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2020"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2020",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2020",
+      "family": "ZRX",
+      "version": "2020",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2020",
+      "toolset": "v100",
+      "sdkEnv": "ZRX2020",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=18",
+        "_ZRXTARGET=20"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": true,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2020"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2020",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2021.x64",
+      "family": "ZRX",
+      "version": "2021",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2021.x64",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2021",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20",
+        "_ZRXTARGET=21"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2021"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2021",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2021",
+      "family": "ZRX",
+      "version": "2021",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2021",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2021",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20",
+        "_ZRXTARGET=21"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2021"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2021",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2022.x64",
+      "family": "ZRX",
+      "version": "2022",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2022.x64",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2022",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20",
+        "_ZRXTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2022"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2022",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2022",
+      "family": "ZRX",
+      "version": "2022",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2022",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2022",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=20",
+        "_ZRXTARGET=22"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2022"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2022",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2023.x64",
+      "family": "ZRX",
+      "version": "2023",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2023.x64",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2023",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22",
+        "_ZRXTARGET=23"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2023",
+        "ZWCAD 2024"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2023",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2024",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2023",
+      "family": "ZRX",
+      "version": "2023",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2023",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2023",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22",
+        "_ZRXTARGET=23"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2023",
+        "ZWCAD 2024"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2023",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          },
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2024",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2024.x64",
+      "family": "ZRX",
+      "version": "2024",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2024.x64",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2024",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22",
+        "_ZRXTARGET=24"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": false,
+      "marketing": [
+        "ZWCAD 2024"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2024",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2024",
+      "family": "ZRX",
+      "version": "2024",
+      "arch": "x86",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2024",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2024",
+      "sdkInc": [
+        "arxport",
+        "Inc"
+      ],
+      "sdkLib": [
+        "Lib-Win32"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=22",
+        "_ZRXTARGET=24"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": false,
+      "marketing": [
+        "ZWCAD 2024"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2024",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU32",
+            "appsHive": "HKLM32",
+            "writeRoot": "preferred32"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ZRX.2025.x64",
+      "family": "ZRX",
+      "version": "2025",
+      "arch": "x64",
+      "ext": ".zrx",
+      "def": "src/ZrxExports.def",
+      "outputName": "LspLoad.ZRX.2025.x64",
+      "toolset": "v141",
+      "sdkEnv": "ZRX2025",
+      "sdkInc": [
+        "arxport/inc",
+        "inc"
+      ],
+      "sdkLib": [
+        "lib-x64"
+      ],
+      "libs": [
+        "zwcad.lib",
+        "zwrx.lib",
+        "zwzrx.lib",
+        "zwdatabase.lib"
+      ],
+      "defines": [
+        "_ACADTARGET=23",
+        "_ZRXTARGET=25"
+      ],
+      "characterSet": "Unicode",
+      "cxxStandard": null,
+      "pinWindowsSdk": false,
+      "ship": true,
+      "marketing": [
+        "ZWCAD 2025",
+        "ZWCAD 2026"
+      ],
+      "reg": {
+        "appsSuffix": "\\Applications",
+        "loaderStyle": "standard",
+        "probes": [
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2025",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          },
+          {
+            "key": "Software\\ZWSOFT\\ZWCAD\\2026",
+            "curVerName": "CurVer",
+            "curVerHive": "HKCU64",
+            "appsHive": "HKLM64",
+            "writeRoot": "preferred64"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+# Host inventory
+
+Source of truth is [`hosts/hosts.json`](../hosts/hosts.json). This file is a human-readable inventory of the 6.10 ship set. A later PR may regenerate it via `scripts/sync-from-hosts.ps1`.
+
+`hosts.json` has no `productVersion`. Product version lives in [`VERSION`](../VERSION).
+
+## Families
+
+| Family | Ext | Def | Entry | Targets | Ship | Unshipped |
+|--------|-----|-----|-------|---------|------|-----------|
+| ARX | `.arx` | `src/RxExports.def` | acrx | 19 | 19 | 0 |
+| BRX | `.brx` | `src/RxExports.def` | acrx | 27 | 27 | 0 |
+| ZRX | `.zrx` | `src/ZrxExports.def` | zcrx | 19 | 17 | 2 |
+| GRX | `.grx` | `src/GrxExports.def` | gcrx | 0 | 0 | 0 |
+
+GRX is schema scaffolding only: family object present, **zero** target rows, no `.grx` in the 6.10 zip.
+
+## Naming
+
+- x86 `outputName`: `LspLoad.{FAM}.{ver}` (no architecture token)
+- x64 `outputName`: `LspLoad.{FAM}.{ver}.x64`
+- `arch` is only `x86` or `x64` (never `Win32` / `X64`)
+- Loader / DestName is row-level (`outputName` + `ext`). Probes do not carry a loader filename.
+
+## Ship vs unshipped
+
+- Gold 6.10 floor: **63** PE names in [`docs/gold/LspLoad-6.10-names.txt`](gold/LspLoad-6.10-names.txt), all `ship: true`.
+- Matrix `ship: true` rows: **63** (matches the floor; extra ship names are allowed after 6.11).
+- Unshipped: **ZRX.2024** x86 and x64 (`ship: false`). The project exists; ZWCAD 2024 is covered by extra probes on **ZRX.2023** using the 2023 DestName.
+- ZWCAD 2026 is an extra probe on **ZRX.2025** using the **2025** DestName (`LspLoad.ZRX.2025.x64.zrx`). Do not invent a `ZRX.2026` filename.
+
+## Special rows
+
+| Id | Notes |
+|----|-------|
+| ARX.15 | `characterSet` MultiByte, `loaderStyle` acadR15, `writeRoot` hklm32, admin detect only, toolset v60 |
+| ARX.20 | toolset `v110_xp`, `pinWindowsSdk` true |
+| ARX.26.x64 | toolset **v145** (not vcxproj v143), `sdkEnv` ARX2027, `_ACADTARGET=26`, `cxxStandard` 17, `pinWindowsSdk` false |
+| BRX.* | `curVerName` CURVER; x64 keys `Software\Bricsys\Bricscad\V{n}x64` |
+| ZRX.2023 | extra probe `Software\ZWSOFT\ZWCAD\2024` |
+| ZRX.2024 | `ship: false` |
+| ZRX.2025.x64 | `sdkInc` arxport/inc + inc, `sdkLib` lib-x64, `_ACADTARGET=23` + `_ZRXTARGET=25`, toolset v141, extra probe ZWCAD 2026 |
+
+`pinWindowsSdk` is true when `toolset` matches `^v(60|70|80|90|100|110|120|140)` (includes `v110_xp`).
+
+## ARX
+
+| Id | Arch | Toolset | SDK | Ship | PE | Marketing |
+|----|------|---------|-----|------|----|-----------|
+| ARX.15 | x86 | v60 | ARX2000 | yes | LspLoad.ARX.15.arx | AutoCAD 2000, AutoCAD 2000i, AutoCAD 2002 |
+| ARX.16 | x86 | v70 | ARX2004 | yes | LspLoad.ARX.16.arx | AutoCAD 2004, AutoCAD 2005, AutoCAD 2006 |
+| ARX.17.x64 | x64 | v80 | ARX2008X64 | yes | LspLoad.ARX.17.x64.arx | AutoCAD 2007, AutoCAD 2008, AutoCAD 2009 |
+| ARX.17 | x86 | v80 | ARX2007 | yes | LspLoad.ARX.17.arx | AutoCAD 2007, AutoCAD 2008, AutoCAD 2009 |
+| ARX.18.x64 | x64 | v90 | ARX2010 | yes | LspLoad.ARX.18.x64.arx | AutoCAD 2010, AutoCAD 2011, AutoCAD 2012 |
+| ARX.18 | x86 | v90 | ARX2010 | yes | LspLoad.ARX.18.arx | AutoCAD 2010, AutoCAD 2011, AutoCAD 2012 |
+| ARX.19.x64 | x64 | v100 | ARX2013 | yes | LspLoad.ARX.19.x64.arx | AutoCAD 2013, AutoCAD 2014 |
+| ARX.19 | x86 | v100 | ARX2013 | yes | LspLoad.ARX.19.arx | AutoCAD 2013, AutoCAD 2014 |
+| ARX.20.x64 | x64 | v110_xp | ARX2015 | yes | LspLoad.ARX.20.x64.arx | AutoCAD 2015, AutoCAD 2016 |
+| ARX.20 | x86 | v110_xp | ARX2015 | yes | LspLoad.ARX.20.arx | AutoCAD 2015, AutoCAD 2016 |
+| ARX.21.x64 | x64 | v140 | ARX2017 | yes | LspLoad.ARX.21.x64.arx | AutoCAD 2017 |
+| ARX.21 | x86 | v140 | ARX2017 | yes | LspLoad.ARX.21.arx | AutoCAD 2017 |
+| ARX.22.x64 | x64 | v140 | ARX2018 | yes | LspLoad.ARX.22.x64.arx | AutoCAD 2018 |
+| ARX.22 | x86 | v140 | ARX2018 | yes | LspLoad.ARX.22.arx | AutoCAD 2018 |
+| ARX.23.x64 | x64 | v141 | ARX2019 | yes | LspLoad.ARX.23.x64.arx | AutoCAD 2019, AutoCAD 2020 |
+| ARX.23 | x86 | v141 | ARX2019 | yes | LspLoad.ARX.23.arx | AutoCAD 2019, AutoCAD 2020 |
+| ARX.24.x64 | x64 | v142 | ARX2021 | yes | LspLoad.ARX.24.x64.arx | AutoCAD 2021, AutoCAD 2022, AutoCAD 2023, AutoCAD 2024 |
+| ARX.25.x64 | x64 | v142 | ARX2025 | yes | LspLoad.ARX.25.x64.arx | AutoCAD 2025, AutoCAD 2026 |
+| ARX.26.x64 | x64 | v145 | ARX2027 | yes | LspLoad.ARX.26.x64.arx | AutoCAD 2027 |
+
+## BRX
+
+| Id | Arch | Toolset | SDK | Ship | PE | Marketing |
+|----|------|---------|-----|------|----|-----------|
+| BRX.9 | x86 | v80 | BRX9 | yes | LspLoad.BRX.9.brx | BricsCAD V9 |
+| BRX.10 | x86 | v80 | BRX10 | yes | LspLoad.BRX.10.brx | BricsCAD V10 |
+| BRX.11 | x86 | v80 | BRX11 | yes | LspLoad.BRX.11.brx | BricsCAD V11 |
+| BRX.12 | x86 | v80 | BRX12 | yes | LspLoad.BRX.12.brx | BricsCAD V12 |
+| BRX.13.x64 | x64 | v100 | BRX13 | yes | LspLoad.BRX.13.x64.brx | BricsCAD V13 |
+| BRX.13 | x86 | v100 | BRX13 | yes | LspLoad.BRX.13.brx | BricsCAD V13 |
+| BRX.14.x64 | x64 | v100 | BRX14 | yes | LspLoad.BRX.14.x64.brx | BricsCAD V14 |
+| BRX.14 | x86 | v100 | BRX14 | yes | LspLoad.BRX.14.brx | BricsCAD V14 |
+| BRX.15.x64 | x64 | v100 | BRX15 | yes | LspLoad.BRX.15.x64.brx | BricsCAD V15 |
+| BRX.15 | x86 | v100 | BRX15 | yes | LspLoad.BRX.15.brx | BricsCAD V15 |
+| BRX.16.x64 | x64 | v120 | BRX16 | yes | LspLoad.BRX.16.x64.brx | BricsCAD V16 |
+| BRX.16 | x86 | v120 | BRX16 | yes | LspLoad.BRX.16.brx | BricsCAD V16 |
+| BRX.17.x64 | x64 | v120 | BRX17 | yes | LspLoad.BRX.17.x64.brx | BricsCAD V17 |
+| BRX.17 | x86 | v120 | BRX17 | yes | LspLoad.BRX.17.brx | BricsCAD V17 |
+| BRX.18.x64 | x64 | v120 | BRX18 | yes | LspLoad.BRX.18.x64.brx | BricsCAD V18 |
+| BRX.18 | x86 | v120 | BRX18 | yes | LspLoad.BRX.18.brx | BricsCAD V18 |
+| BRX.19.x64 | x64 | v141 | BRX19 | yes | LspLoad.BRX.19.x64.brx | BricsCAD V19 |
+| BRX.19 | x86 | v141 | BRX19 | yes | LspLoad.BRX.19.brx | BricsCAD V19 |
+| BRX.20.x64 | x64 | v141 | BRX20 | yes | LspLoad.BRX.20.x64.brx | BricsCAD V20 |
+| BRX.20 | x86 | v141 | BRX20 | yes | LspLoad.BRX.20.brx | BricsCAD V20 |
+| BRX.21.x64 | x64 | v141 | BRX21 | yes | LspLoad.BRX.21.x64.brx | BricsCAD V21 |
+| BRX.22.x64 | x64 | v142 | BRX22 | yes | LspLoad.BRX.22.x64.brx | BricsCAD V22 |
+| BRX.23.x64 | x64 | v142 | BRX23 | yes | LspLoad.BRX.23.x64.brx | BricsCAD V23 |
+| BRX.24.x64 | x64 | v142 | BRX24 | yes | LspLoad.BRX.24.x64.brx | BricsCAD V24 |
+| BRX.25.x64 | x64 | v142 | BRX25 | yes | LspLoad.BRX.25.x64.brx | BricsCAD V25 |
+| BRX.26.x64 | x64 | v143 | BRX26 | yes | LspLoad.BRX.26.x64.brx | BricsCAD V26 |
+| BRX.27.x64 | x64 | v143 | BRX27 | yes | LspLoad.BRX.27.x64.brx | BricsCAD V27 |
+
+## ZRX
+
+| Id | Arch | Toolset | SDK | Ship | PE | Marketing |
+|----|------|---------|-----|------|----|-----------|
+| ZRX.2014 | x86 | v100 | ZRX2014 | yes | LspLoad.ZRX.2014.zrx | ZWCAD 2014 |
+| ZRX.2015 | x86 | v100 | ZRX2015 | yes | LspLoad.ZRX.2015.zrx | ZWCAD 2015 |
+| ZRX.2017.x64 | x64 | v100 | ZRX2017 | yes | LspLoad.ZRX.2017.x64.zrx | ZWCAD 2017 |
+| ZRX.2017 | x86 | v100 | ZRX2017 | yes | LspLoad.ZRX.2017.zrx | ZWCAD 2017 |
+| ZRX.2018.x64 | x64 | v100 | ZRX2018 | yes | LspLoad.ZRX.2018.x64.zrx | ZWCAD 2018 |
+| ZRX.2018 | x86 | v100 | ZRX2018 | yes | LspLoad.ZRX.2018.zrx | ZWCAD 2018 |
+| ZRX.2019.x64 | x64 | v100 | ZRX2019 | yes | LspLoad.ZRX.2019.x64.zrx | ZWCAD 2019 |
+| ZRX.2019 | x86 | v100 | ZRX2019 | yes | LspLoad.ZRX.2019.zrx | ZWCAD 2019 |
+| ZRX.2020.x64 | x64 | v100 | ZRX2020 | yes | LspLoad.ZRX.2020.x64.zrx | ZWCAD 2020 |
+| ZRX.2020 | x86 | v100 | ZRX2020 | yes | LspLoad.ZRX.2020.zrx | ZWCAD 2020 |
+| ZRX.2021.x64 | x64 | v141 | ZRX2021 | yes | LspLoad.ZRX.2021.x64.zrx | ZWCAD 2021 |
+| ZRX.2021 | x86 | v141 | ZRX2021 | yes | LspLoad.ZRX.2021.zrx | ZWCAD 2021 |
+| ZRX.2022.x64 | x64 | v141 | ZRX2022 | yes | LspLoad.ZRX.2022.x64.zrx | ZWCAD 2022 |
+| ZRX.2022 | x86 | v141 | ZRX2022 | yes | LspLoad.ZRX.2022.zrx | ZWCAD 2022 |
+| ZRX.2023.x64 | x64 | v141 | ZRX2023 | yes | LspLoad.ZRX.2023.x64.zrx | ZWCAD 2023, ZWCAD 2024 |
+| ZRX.2023 | x86 | v141 | ZRX2023 | yes | LspLoad.ZRX.2023.zrx | ZWCAD 2023, ZWCAD 2024 |
+| ZRX.2024.x64 | x64 | v141 | ZRX2024 | no | LspLoad.ZRX.2024.x64.zrx | ZWCAD 2024 |
+| ZRX.2024 | x86 | v141 | ZRX2024 | no | LspLoad.ZRX.2024.zrx | ZWCAD 2024 |
+| ZRX.2025.x64 | x64 | v141 | ZRX2025 | yes | LspLoad.ZRX.2025.x64.zrx | ZWCAD 2025, ZWCAD 2026 |
+
+## GRX
+
+| Id | Arch | Toolset | SDK | Ship | PE | Marketing |
+|----|------|---------|-----|------|----|-----------|
+*(no targets)*
+
+## Registry probes
+
+Every row has `reg.appsSuffix`, `reg.loaderStyle`, and `reg.probes[]`. Every probe has `key`, `curVerName`, `curVerHive`, `appsHive`, `writeRoot`.
+
+- Hives: `HKCU32`, `HKCU64`, `HKLM32`, `HKLM64`
+- `writeRoot`: `preferred32` | `preferred64` | `hklm32`
+- Typical detect: CurVer in HKCU* and Applications in HKLM* (ARX 15: both on HKLM32)
+- BRX CurVer value name is `CURVER`
+
