@@ -205,8 +205,6 @@ CMake/Inno stale for the next clone.
 - `VERSION` (patch unless the operator chooses otherwise)
 - Product `ReadMe.txt` first line (`LspLoad 6.11   <date>`) — it consumes
   `VERSION`, not a JSON field
-- `_webprep` / `freebies.json` only if the operator is doing site work
-  (those files live **outside** this repo)
 
 Do **not** bump `InnoSetup/ReadMe.txt` (`Installer Script 2.1`) for a host add.
 
@@ -363,7 +361,7 @@ real SDK **and** the validator freeze is relaxed.
 
 - Porting `src/LspLoad.cpp` for API breaks beyond compile blockers.
 - Copyright year / Inno LEGAL NOTICE edits.
-- Site hugo publish / `_webprep` copy (checklist only).
+- Publishing zips or `freebies.json` to manusoft.com.
 - Inventing GRX registry keys or shipping a `.grx` without a real SDK row.
 - Cloning `.vcxproj`, WiX, RxInstall, or OpenDCL VI trees.
 - Creating or publishing a GitHub repository.
