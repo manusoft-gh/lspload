@@ -218,15 +218,6 @@ function Write-StrippedIss([string] $src, [string] $dest) {
         $kept.Add($line)
     }
     $text = $kept -join "`r`n"
-    $fetchRe = '(?ms);; This script uses LspLoad to load a lisp plugin via registry based\r?\n;; demand-load keys\. The LspLoad binaries must be obtained separately and\r?\n;; placed in a LspLoad subfolder relative to the folder containing this\r?\n;; script\. The LspLoad binaries may be obtained from the ManuSoft web site\r?\n;; by downloading LspLoad\.zip from the ARX freebies page:\r?\n;; http://www\.manusoft\.com/software/freebies/arx\.html\r?\n?'
-    $newFetch = @"
-;; This script uses LspLoad to load a lisp plugin via registry based
-;; demand-load keys. This public kit already includes the LspLoad binaries
-;; in the LspLoad subfolder next to this script. Keep generated\ beside
-;; the script; Inno Script Studio compiles unsigned (no Sign Tool required).
-
-"@ -replace '(?<!\r)\n', "`r`n"
-    $text = [regex]::Replace($text, $fetchRe, $newFetch)
     if ($stripped -and $text -notmatch 'Public kit copy: Inno Sign Tool alias omitted') {
         $insert = '; Public kit copy: Inno Sign Tool alias omitted so the sample compiles unsigned.'
         if ($text -match '(?m)^\[Setup\]\s*$') {
@@ -388,9 +379,6 @@ try {
         @{ Path = (Join-Path $GenDir 'HostsFiles.iss'); Entry = 'generated/HostsFiles.iss' },
         @{ Path = (Join-Path $GenDir 'HostsCode.iss'); Entry = 'generated/HostsCode.iss' }
     )
-    foreach ($h in ($harvest | Sort-Object Name)) {
-        $kitEntries += @{ Path = (Join-Path $binStage $h.Name); Entry = ("LspLoad/" + $h.Name) }
-    }
     foreach ($ke in $kitEntries) {
         if (-not (Test-Path -LiteralPath $ke.Path)) {
             throw "Kit zip missing $($ke.Path)"
@@ -430,6 +418,20 @@ try {
         if ($kitNames | Where-Object { $_ -match [regex]::Escape($bad) }) {
             throw "LispPluginSetup.zip contains $bad"
         }
+    }
+    $kitPe = @($kitNames | Where-Object { $_ -match '\.(arx|brx|zrx|grx)$' })
+    if ($kitPe.Count -gt 0) {
+        throw "LispPluginSetup.zip must not contain PE: $($kitPe -join ', ')"
+    }
+    $kitWant = @(
+        'ReadMe.txt', 'MyLispPlugin.iss', 'MyLispPlugin.lsp', 'MyLispPluginCmds.lsp',
+        'generated/HostsFiles.iss', 'generated/HostsCode.iss'
+    ) | Sort-Object
+    $kitHave = @($kitNames | ForEach-Object { $_ -replace '\\', '/' } | Sort-Object)
+    $kitExtra = Compare-Object $kitWant $kitHave | Where-Object { $_.SideIndicator -eq '=>' }
+    $kitMissing = Compare-Object $kitWant $kitHave | Where-Object { $_.SideIndicator -eq '<=' }
+    if ($kitExtra -or $kitMissing) {
+        throw "LispPluginSetup.zip entries must be the kit sources only. extra=$($kitExtra.InputObject -join ',') missing=$($kitMissing.InputObject -join ',')"
     }
 
     $sumsPath = Join-Path $DistDir 'SHA256SUMS.txt'

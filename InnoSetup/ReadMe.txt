@@ -1,9 +1,9 @@
- Inno Setup Lisp Plugin Installer Script 2.1           2026-11-05
+ Inno Setup Lisp Plugin Installer Script 2.2           2026-11-05
  
 Setup script demonstrating how to install a lisp plugin on any or all
 supported versions of AutoCAD, Bricscad, or ZWCAD+.
 
-This kit header (Installer Script 2.1) is independent of the LspLoad
+This kit header (Installer Script 2.2) is independent of the LspLoad
 stub VERSION. It changes when kit UX changes, not with every host.
 
 
@@ -35,9 +35,12 @@ The generated\ folder must sit beside MyLispPlugin.iss. The compiler
 includes generated\HostsFiles.iss and generated\HostsCode.iss; compiling
 the script without that folder will fail.
 
-This kit already includes the signed LspLoad stubs in the LspLoad
-subfolder next to this script. You do not need to download LspLoad.zip
-separately (overwriting LspLoad\ from a newer LspLoad.zip is still fine).
+This script uses LspLoad to load a lisp plugin via registry based
+demand-load keys. The LspLoad binaries must be obtained separately and
+placed in a LspLoad subfolder relative to the folder containing this
+script. The LspLoad binaries may be obtained from the ManuSoft web site
+by downloading LspLoad.zip from the ARX freebies page:
+http://www.manusoft.com/software/freebies/arx.html
 
 No Inno Sign Tool is required. Compile the sample unsigned in Inno
 Script Studio. This zip does not include signing scripts; add your own
@@ -58,13 +61,14 @@ The sample script is designed to be used as a template, so that with a
 few changes where indicated, it can be quickly adapted to build a setup
 program for a real lisp plugin.
 
-The steps for building the sample script are very simple. Keep this
-ReadMe, MyLispPlugin.iss, the generated\ fragments, the sample .lsp
-files, and the bundled LspLoad\ folder together. If Inno Script Studio
-is installed, simply double click on the MyLispPlugin.iss file to open
-it in the IDE. Choose Compile in the Project menu to build the setup
-file MyLispPluginSetup.exe, which will be created in the Output
-subfolder. The public kit compiles unsigned (no Sign Tool required).
+The steps for building the sample script are very simple. The script,
+generated\ fragments, and associated files should be in the same folder,
+and the LspLoad binaries should be placed in a subfolder named LspLoad.
+If Inno Script Studio is installed, simply double click on the
+MyLispPlugin.iss file to open it in the IDE. Choose Compile in the
+Project menu to build the setup file MyLispPluginSetup.exe, which will
+be created in the Output subfolder. The public kit compiles unsigned
+(no Sign Tool required).
 
 Run the setup program to install the sample plugin. If the setup
 completes, you should be able to use the sample commands MyCommand1

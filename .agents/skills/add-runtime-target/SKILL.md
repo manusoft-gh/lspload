@@ -33,7 +33,7 @@ Never access drives X: or B:.
 | Inno Pascal | `InnoSetup/generated/HostsCode.iss` | **GENERATED.** Detect / write / uninstall. |
 | Presets | `CMakePresets.json` | One configure = one arch. No combined `vs2022-full`. |
 | Zipper | `scripts/package-zips.ps1` | **The only copier/zipper.** Do not copy PE into `InnoSetup/LspLoad/` yourself. |
-| Kit header | `InnoSetup/ReadMe.txt` | `Installer Script 2.1` — independent of `VERSION`. Do not bump it for a host add. |
+| Kit header | `InnoSetup/ReadMe.txt` | `Installer Script 2.2` — independent of `VERSION`. Do not bump it for a host add. |
 
 After every JSON edit: `pwsh -File scripts/sync-from-hosts.ps1` then
 `pwsh -File scripts/validate-hosts.ps1` **before** configure. CMake includes
@@ -203,7 +203,7 @@ CMake/Inno stale for the next clone.
 - Product `ReadMe.txt` first line (`LspLoad 6.11   <date>`) — it consumes
   `VERSION`, not a JSON field
 
-Do **not** bump `InnoSetup/ReadMe.txt` (`Installer Script 2.1`) for a host add.
+Do **not** bump `InnoSetup/ReadMe.txt` (`Installer Script 2.2`) for a host add.
 
 ### 5. Configure the matching **full** preset and build that row signed
 
@@ -256,11 +256,12 @@ access-violates and overwrites the stub. CMake does not invoke it.
 pwsh -File scripts/package-zips.ps1 -Official
 ```
 
-That script rebuilds-harvests this row from the matching `full-*` `out/Release/`,
-overlays rolling `gold/` for the rest, fills `InnoSetup/LspLoad/`, writes
-`dist/LspLoad.zip`, `dist/LspLoadSource.zip`, `dist/LispPluginSetup.zip`, and
-`dist/SHA256SUMS.txt` (`rebuilt` vs `reused-gold`), **then refreshes `gold/`**
-from `dist/LspLoad.zip`.
+That script harvests this row from the matching `full-*` `out/Release/`,
+overlays rolling `gold/` for the rest, fills lab `InnoSetup/LspLoad/` (not
+packed), writes `dist/LspLoad.zip` (PE), `dist/LspLoadSource.zip`, and
+`dist/LispPluginSetup.zip` (kit sources + `generated/` only — **no PE**),
+and `dist/SHA256SUMS.txt` (`rebuilt` vs `reused-gold`), **then refreshes
+`gold/`** from `dist/LspLoad.zip`.
 
 No parallel copy step. Do not run WinZip. Do not pass `-RequireAllShip`.
 
@@ -273,9 +274,9 @@ into this skill or the tree.
 
 Compile **git** `InnoSetup/MyLispPlugin.iss` **with** `SignTool=manusoft`
 (signed `MyLispPluginSetup.exe`, Authenticode Valid). That exe is **not**
-packed. Assert `LispPluginSetup.zip` `.iss` has no `SignTool=` and the kit /
-source zips contain no `sign-files.ps1` / `SignLispFiles.bat` / `#Sign.bat` /
-`.agents`.
+packed. Assert `LispPluginSetup.zip` `.iss` has no `SignTool=`, no PE, and
+the kit / source zips contain no `sign-files.ps1` / `SignLispFiles.bat` /
+`#Sign.bat` / `.agents`.
 
 ### 10. Capture lessons
 

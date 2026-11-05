@@ -4,7 +4,7 @@ Maintainer/agent notes for this repository.
 
 Product version is the single line in `VERSION`. Do not invent a second
 version field (including inside `hosts.json`). The Inno kit header
-(`InnoSetup/ReadMe.txt`, Installer Script 2.1) is independent of `VERSION`.
+(`InnoSetup/ReadMe.txt`, Installer Script 2.2) is independent of `VERSION`.
 
 After any `hosts.json` edit, run `pwsh -File scripts/sync-from-hosts.ps1`
 then `validate-hosts.ps1` **before** `cmake --preset …`. CMake does not parse
