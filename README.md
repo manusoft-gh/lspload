@@ -31,11 +31,9 @@ src/LspLoad.cpp              stub implementation
 src/RxExports.def            ARX/BRX exports
 src/ZrxExports.def           ZRX exports
 src/GrxExports.def           GRX scaffolding (no ship row)
-docs/gold/LspLoad-6.10-names.txt   6.10 PE name floor (63 binaries)
 ```
 
-Rolling gold PE overlay lives in gitignored `gold/`. Do not commit
-`.arx` / `.brx` / `.zrx` / `.grx` binaries.
+Do not commit `.arx` / `.brx` / `.zrx` / `.grx` binaries.
 
 ## Building stubs (maintainers)
 

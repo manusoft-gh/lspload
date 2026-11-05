@@ -24,5 +24,3 @@ ARX.26 / `ARX2027` / `R26.0` / v145). New hosts default x64-only. Refuse an
 unset SDK env. Never write PIN/PUK/passwords into the tree (env var names
 only). `package-zips.ps1 -Official` is the only zipper; do not pass
 `-RequireAllShip` on a normal host-add.
-
-Gold 6.10 PE names (floor) are listed in `docs/gold/LspLoad-6.10-names.txt`.

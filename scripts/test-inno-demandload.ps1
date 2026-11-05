@@ -90,7 +90,7 @@ if ($arx15.Count -eq 1) {
     }
 }
 
-# BRX CURVER; detect is product key only (gold does not require \Applications).
+# BRX CURVER; detect is product key only (no \Applications).
 function Get-DetectKey([string]$family, [string]$hostKey, [string]$productKey) {
     $base = "$hostKey\$productKey"
     if ($family -eq 'BRX') { return $base }

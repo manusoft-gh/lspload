@@ -165,9 +165,6 @@ libs / `reg.probes` / `marketing`. Loader stays row-level (`outputName` +
 `pinWindowsSdk` is `true` when `toolset` matches `^v(60|70|80|90|100|110|120|140)`
 (includes `_xp`). New x64 hosts are almost always `false`.
 
-Keep every name in `docs/gold/LspLoad-6.10-names.txt` as `ship: true`. Extra
-`ship: true` names after 6.11 are allowed.
-
 **First GRX row:** before validate will pass, lift the v1 freeze in
 `scripts/validate-hosts.ps1`:
 

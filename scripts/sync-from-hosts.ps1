@@ -438,7 +438,7 @@ foreach ($fam in $famOrder) {
     Add-Md ('| {0} | `{1}` | `{2}` | {3} | {4} | {5} | {6} |' -f $fam, $f.ext, $f.def, $f.entry, $rows.Count, $ship, $unship)
 }
 Add-Md ''
-Add-Md 'GRX is schema scaffolding only: family object present, **zero** target rows, no `.grx` in the 6.10 zip.'
+Add-Md 'GRX is schema scaffolding only: family object present, **zero** target rows.'
 Add-Md ''
 Add-Md '## Naming'
 Add-Md ''
@@ -449,11 +449,8 @@ Add-Md '- Loader / DestName is row-level (`outputName` + `ext`). Probes do not c
 Add-Md ''
 Add-Md '## Ship vs unshipped'
 Add-Md ''
-$goldPath = Join-Path $RepoRoot 'docs\gold\LspLoad-6.10-names.txt'
-$goldCount = @(Get-Content -LiteralPath $goldPath | Where-Object { $_.Trim() }).Count
 $shipCount = $shipRows.Count
-Add-Md ('- Gold 6.10 floor: **{0}** PE names in [`docs/gold/LspLoad-6.10-names.txt`](gold/LspLoad-6.10-names.txt), all `ship: true`.' -f $goldCount)
-Add-Md ('- Matrix `ship: true` rows: **{0}** (extra ship names are allowed after 6.11).' -f $shipCount)
+Add-Md ('- Matrix `ship: true` rows: **{0}**.' -f $shipCount)
 Add-Md '- Unshipped: **ZRX.2024** x86 and x64 (`ship: false`). The project exists; ZWCAD 2024 is covered by extra probes on **ZRX.2023** using the 2023 DestName.'
 Add-Md '- ZWCAD 2026 is an extra probe on **ZRX.2025** using the **2025** DestName (`LspLoad.ZRX.2025.x64.zrx`). Do not invent a `ZRX.2026` filename.'
 Add-Md ''

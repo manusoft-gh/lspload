@@ -13,7 +13,7 @@ Source of truth is [`hosts/hosts.json`](../hosts/hosts.json). This file is gener
 | ZRX | `.zrx` | `src/ZrxExports.def` | zcrx | 19 | 17 | 2 |
 | GRX | `.grx` | `src/GrxExports.def` | gcrx | 0 | 0 | 0 |
 
-GRX is schema scaffolding only: family object present, **zero** target rows, no `.grx` in the 6.10 zip.
+GRX is schema scaffolding only: family object present, **zero** target rows.
 
 ## Naming
 
@@ -24,8 +24,7 @@ GRX is schema scaffolding only: family object present, **zero** target rows, no 
 
 ## Ship vs unshipped
 
-- Gold 6.10 floor: **63** PE names in [`docs/gold/LspLoad-6.10-names.txt`](gold/LspLoad-6.10-names.txt), all `ship: true`.
-- Matrix `ship: true` rows: **63** (extra ship names are allowed after 6.11).
+- Matrix `ship: true` rows: **63**.
 - Unshipped: **ZRX.2024** x86 and x64 (`ship: false`). The project exists; ZWCAD 2024 is covered by extra probes on **ZRX.2023** using the 2023 DestName.
 - ZWCAD 2026 is an extra probe on **ZRX.2025** using the **2025** DestName (`LspLoad.ZRX.2025.x64.zrx`). Do not invent a `ZRX.2026` filename.
 

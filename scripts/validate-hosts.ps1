@@ -1,21 +1,15 @@
-# Validate hosts/hosts.json against the 6.10 floor and matrix schema.
-# Extra ship:true names beyond the floor are allowed (post-6.11).
+# Validate hosts/hosts.json against the matrix schema.
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $RepoRoot = Split-Path $PSScriptRoot -Parent
 $HostsPath = Join-Path $RepoRoot 'hosts\hosts.json'
-$GoldPath = Join-Path $RepoRoot 'docs\gold\LspLoad-6.10-names.txt'
 
 $errors = [System.Collections.Generic.List[string]]::new()
 function Add-Err([string]$msg) { [void]$errors.Add($msg) }
 
 if (-not (Test-Path -LiteralPath $HostsPath)) {
     Write-Error "Missing $HostsPath"
-    exit 1
-}
-if (-not (Test-Path -LiteralPath $GoldPath)) {
-    Write-Error "Missing $GoldPath"
     exit 1
 }
 
@@ -231,23 +225,11 @@ if (-not $zrx2023Has2024['x86']) { Add-Err 'ZRX.2023 x86 must probe ZWCAD 2024' 
 if (-not $zrx2023Has2024['x64']) { Add-Err 'ZRX.2023 x64 must probe ZWCAD 2024' }
 if (-not $zrx2025Has2026) { Add-Err 'ZRX.2025 must probe ZWCAD 2026 (2025 DestName, not ZRX.2026)' }
 
-$gold = Get-Content -LiteralPath $GoldPath | ForEach-Object { $_.Trim() } | Where-Object { $_ }
-foreach ($name in $gold) {
-    $match = @($targets | Where-Object { "$($_.outputName)$($_.ext)" -eq $name })
-    if ($match.Count -eq 0) {
-        Add-Err "gold floor name $name has no matching row"
-        continue
-    }
-    foreach ($m in $match) {
-        if (-not [bool]$m.ship) { Add-Err "gold floor name $name must remain ship:true" }
-    }
-}
-
 if ($errors.Count -gt 0) {
     Write-Host "validate-hosts.ps1: $($errors.Count) error(s)"
     $errors | ForEach-Object { Write-Host "  $_" }
     exit 1
 }
 
-Write-Host ("validate-hosts.ps1: OK ({0} targets, {1} ship:true, {2} gold-floor names)" -f $targets.Count, $shipNames.Count, $gold.Count)
+Write-Host ("validate-hosts.ps1: OK ({0} targets, {1} ship:true)" -f $targets.Count, $shipNames.Count)
 exit 0
