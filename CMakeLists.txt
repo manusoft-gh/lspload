@@ -26,7 +26,7 @@ foreach(_lspload_cfg IN ITEMS Debug Release)
   set(CMAKE_PDB_OUTPUT_DIRECTORY_${_lspload_cfg_u} "${CMAKE_BINARY_DIR}/out/${_lspload_cfg}")
 endforeach()
 
-option(LSPLOAD_SIGN "Authenticode-sign PE after link (no-op until PR 3)" OFF)
+option(LSPLOAD_SIGN "Authenticode-sign PE after link via scripts/sign-files.ps1" OFF)
 set(LSPLOAD_TARGETS "" CACHE STRING "Optional semicolon-separated host ids (empty = matrix filter)")
 set(LSPLOAD_PER_FAMILY_MAX "0" CACHE STRING "Keep at most N latest ids per family (0 = unlimited)")
 set(LSPLOAD_MIN_TOOLSET "" CACHE STRING "Minimum VS toolset (e.g. v141); empty = none")

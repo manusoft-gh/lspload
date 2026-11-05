@@ -30,6 +30,7 @@ cmake/LspLoadHosts.cmake     GENERATED from hosts.json (committed)
 cmake/LspLoadTargets.cmake   add_library + Windows SDK pin
 hosts/hosts.json             host matrix (no productVersion)
 scripts/sync-from-hosts.ps1  JSON → LspLoadHosts.cmake + docs/HOSTS.md
+scripts/sign-files.ps1       git/lab Authenticode (jsign); not packed in public zips
 src/LspLoad.cpp              stub implementation
 src/RxExports.def            ARX/BRX exports
 src/ZrxExports.def           ZRX exports
@@ -68,13 +69,33 @@ Those toolsets need Daffodil / old Platform Toolsets on the lab box.
 GRX has `src/GrxExports.def` and a `_GRXTARGET` remap; there is **no**
 `add_library` until a GRX target row exists.
 
-Signing (`scripts/sign-files.ps1`) is a later commit. `LSPLOAD_SIGN=ON` with
-that script missing is a no-op, not a configure error.
+## Signing (lab / git only)
+
+Official PE are Authenticode-signed after link with `scripts/sign-files.ps1`
+(jsign `--storetype YUBIKEY`, RFC3161 `http://ts.ssl.com`). PIN is **never**
+on the command line and **never** in this tree.
+
+Set one of (first match wins):
+
+- `SIGN_STORE_PASSWORD`
+- `SIGN_PIN`
+- `YUBIKEY_PIN`
+
+Optional: `SIGN_STORE_TYPE` (default `YUBIKEY`), `SIGN_CERT_ALIAS`,
+`SIGN_CERT_FILE`, `SIGN_PFX_PATH`, `SIGN_PFX_PASSWORD`, `SIGN_TIMESTAMP_URL`.
+
+CMake post-build runs the script when `LSPLOAD_SIGN` is ON (full presets),
+`scripts/sign-files.ps1` exists, pwsh is found, and a PIN (or PFX) env var is
+set. Missing script, missing PIN, or `LSPLOAD_SIGN=OFF` is a **no-op**
+(warning, not a configure error). `*-dev-*` presets set `LSPLOAD_SIGN=OFF`.
+Already-Valid signatures are skipped.
+
+This script is git/lab only. Public zips must not include it (later
+`package-zips.ps1` must strip it).
 
 ## What not to do here
 
 - Do not import the 42 `.vcxproj` folders, `LspLoad.sln`, `Win32/`, `X64/`,
   `.tlog`, or `_webprep`.
 - Do not put PIN, PUK, or signing passwords in this tree.
-- Public download zips must not contain signing scripts. Git/lab will keep
-  signing separately in later commits.
+- Public download zips must not contain signing scripts.
