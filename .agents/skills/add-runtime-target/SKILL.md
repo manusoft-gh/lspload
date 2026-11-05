@@ -45,7 +45,12 @@ the generated cmake file; it does not parse JSON.
 1. **Family:** `ARX` / `BRX` / `ZRX` / `GRX`. GRX is allowed when SDK env,
    directory, **and operator-supplied registry probes** are present. Do **not**
    invent GstarCAD keys. First GRX row has no same-family LspLoad clone — fill
-   every required field from the SDK + operator probes.
+   every required field from the SDK + operator probes. That first row **must
+   also relax** the v1 freeze in `scripts/validate-hosts.ps1` (the two checks
+   `GRX family must have zero targets` and `GRX ship:true is not allowed`).
+   Keep `ship: true` only when that real SDK row exists. Keep refusing
+   invented registry keys. Do not add a GRX target while those checks still
+   require zero rows.
 2. **Marketing product** (AutoCAD 2028, BricsCAD V28, ZWCAD 2027, GstarCAD 20xx).
 3. **Matrix `version` token:**
    - ARX: ObjectARX **major** (worked 6.10 example: **`26`**, not the year).
@@ -151,17 +156,31 @@ Refuse if:
 
 ### 2. Clone the JSON row
 
-Edit **`hosts/hosts.json` only**. Copy the latest same-family `ship: true`
-object. New `id` (`ARX.<major>.x64`, `BRX.<ver>.x64`, `ZRX.<year>.x64`,
-`GRX.<year>.x64`). Patch SDK / defines / libs / `reg.probes` / `marketing`.
-Loader stays row-level (`outputName` + `ext`). Shared-binary years = extra
-probes, not a second PE.
+**Hand-edit** `hosts/hosts.json` (and, on the **first GRX row only**,
+`scripts/validate-hosts.ps1` as below). Do **not** hand-edit generated files.
+Copy the latest same-family `ship: true` object. New `id` (`ARX.<major>.x64`,
+`BRX.<ver>.x64`, `ZRX.<year>.x64`, `GRX.<year>.x64`). Patch SDK / defines /
+libs / `reg.probes` / `marketing`. Loader stays row-level (`outputName` +
+`ext`). Shared-binary years = extra probes, not a second PE.
 
 `pinWindowsSdk` is `true` when `toolset` matches `^v(60|70|80|90|100|110|120|140)`
 (includes `_xp`). New x64 hosts are almost always `false`.
 
 Keep every name in `docs/gold/LspLoad-6.10-names.txt` as `ship: true`. Extra
 `ship: true` names after 6.11 are allowed.
+
+**First GRX row:** before validate will pass, lift the v1 freeze in
+`scripts/validate-hosts.ps1`:
+
+```powershell
+if ($grxRows -ne 0) { Add-Err "GRX family must have zero targets (found $grxRows)" }
+if ($grxShip -ne 0) { Add-Err "GRX ship:true is not allowed (found $grxShip)" }
+```
+
+Replace those with schema that still requires operator-supplied probes and a
+real `sdkEnv` directory, and that still forbids `ship: true` without that SDK
+row. Do **not** invent registry keys. Later GRX years clone the first row and
+do not re-introduce a zero-target freeze.
 
 ### 3. Sync and validate
 
@@ -170,8 +189,17 @@ pwsh -File scripts/sync-from-hosts.ps1
 pwsh -File scripts/validate-hosts.ps1
 ```
 
-Re-run sync after **every** JSON edit, before configure. Do not hand-edit
-`cmake/LspLoadHosts.cmake`, `docs/HOSTS.md`, or `InnoSetup/generated/*.iss`.
+Re-run sync after **every** JSON edit, before configure. Sync **rewrites**
+committed generated files — never hand-edit them:
+
+- `cmake/LspLoadHosts.cmake`
+- `InnoSetup/generated/HostsFiles.iss`
+- `InnoSetup/generated/HostsCode.iss`
+- `docs/HOSTS.md`
+
+**Commit that sync output with** `hosts/hosts.json` (and `VERSION` /
+product `ReadMe.txt` when bumped). Omitting the generated files leaves
+CMake/Inno stale for the next clone.
 
 ### 4. Bump product version
 
@@ -264,7 +292,13 @@ new.
 
 ### 11. Commit
 
-Only if the user asked. Suggested message:
+Only if the user asked. Include `hosts/hosts.json`, `VERSION`, product
+`ReadMe.txt`, **and the sync output** (`cmake/LspLoadHosts.cmake`,
+`InnoSetup/generated/HostsFiles.iss`, `InnoSetup/generated/HostsCode.iss`,
+`docs/HOSTS.md`). First GRX also includes the `validate-hosts.ps1` freeze
+change. Never commit hand-edits of generated files.
+
+Suggested message:
 
 ```text
 feat: <AutoCAD 20xx / BricsCAD Vn / ZWCAD 20xx> via hosts.json
@@ -312,13 +346,18 @@ Scaffolding is in v1: `family: GRX` in `hosts/hosts.json`, `src/GrxExports.def`
 (`gcrxEntryPoint`, `gcrxGetApiVersion`), `_GRXTARGET` remap in `src/LspLoad.cpp`
 (entry point only — collect extra remaps such as queueexpr from the SDK; do
 not invent them). **No** `ship: true` GRX row until this skill adds one with a
-real SDK.
+real SDK **and** the validator freeze is relaxed.
 
 - Calendar-year ids (`GRX.2027.x64` is an OpenDCL pattern — confirm).
 - Env example `GRX2027` is **unverified** until the operator provides it.
 - Registry: OpenDCL uses `SOFTWARE\GstarSoft\GstarCAD\R{year-2000}...` /
   `Gstarsoft\GstarCAD\R...` (casing quirks). **Unverified for LspLoad.**
   Operator supplies probes; **refuse guessed keys.**
+- `scripts/validate-hosts.ps1` currently errors on any GRX `targets[]` row
+  (`GRX family must have zero targets`) and on any `ship: true` GRX row
+  (`GRX ship:true is not allowed`). The first real GRX add **must change
+  both checks** in the same commit as the JSON row. After that, `ship: true`
+  remains allowed only for a real SDK+probes row.
 - `ship: true` only after those probes + SDK directory exist. No fourth zip;
   the PE joins `LspLoad.zip`.
 
@@ -338,8 +377,13 @@ real SDK.
 - [ ] Inputs collected: family, marketing, **asked** matrix version, x64,
       `sdkEnv` set to a real dir, clone source, probes, toolset, defines
       (incl. ZRX short `_ZRXTARGET` / BRX `_ACADTARGET` compat)
-- [ ] `hosts/hosts.json` row only; no `productVersion`; no Loader on probes
+- [ ] `hosts/hosts.json` row; no `productVersion`; no Loader on probes
+- [ ] First GRX: `scripts/validate-hosts.ps1` zero-target / zero-ship freeze
+      lifted in the same change (still no invented keys; `ship: true` only
+      with a real SDK row)
 - [ ] `scripts/sync-from-hosts.ps1` + `scripts/validate-hosts.ps1`
+- [ ] Generated files committed with the JSON (never hand-edited):
+      `cmake/LspLoadHosts.cmake`, `InnoSetup/generated/*`, `docs/HOSTS.md`
 - [ ] `VERSION` + product `ReadMe.txt` bumped; Inno kit header **not** bumped
 - [ ] Matching **full** preset `--fresh` (not `*-dev-*`); Release; signed
 - [ ] PE name = `outputName`+`ext` under `build/<full-preset>/out/Release/`

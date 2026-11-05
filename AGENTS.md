@@ -9,8 +9,8 @@ version field (including inside `hosts.json`). The Inno kit header
 After any `hosts.json` edit, run `pwsh -File scripts/sync-from-hosts.ps1`
 then `validate-hosts.ps1` **before** `cmake --preset …`. CMake does not parse
 JSON; it includes generated `cmake/LspLoadHosts.cmake`. Sync also writes
-`InnoSetup/generated/HostsFiles.iss` and `HostsCode.iss`. Do not hand-edit
-generated files.
+`InnoSetup/generated/HostsFiles.iss`, `HostsCode.iss`, and `docs/HOSTS.md`.
+Do not hand-edit generated files; **commit them with** `hosts/hosts.json`.
 
 ## Skill
 
