@@ -20,8 +20,7 @@ LspLoad is a demand-load stub (`src/LspLoad.cpp`), not OpenDCL Runtime. Do
 **not** clone `Runtime/*/VI/*.props`, `RxInstall.cpp`, WiX catalogs, languages,
 or Studio. There is no `.vcxproj` to copy.
 
-Work copy is `P:\Work\LspLoad\GitHub\lspload`. Leave `P:\Work\LspLoad` as 6.10
-gold (read-only). Never access drives X: or B:.
+Never access drives X: or B:.
 
 ## One-home-per-fact
 
@@ -253,9 +252,8 @@ Authenticode must be `Valid` unless the operator explicitly chose
 
 ### 7. ZRXCheck
 
-CMake already post-builds `ZRXCheck` when `Tools/ZRXCheck` exists under the
-ZRX SDK **and** the PE linked. Do not invoke it a second time. Do not treat
-an unsigned-skip as a ZRXCheck failure.
+Do **not** run SDK `ZRXCheck.exe`. Historic Win32 ZRXCheck (2014/2015)
+access-violates and overwrites the stub. CMake does not invoke it.
 
 ### 8. Package (only zipper)
 
@@ -368,7 +366,7 @@ real SDK **and** the validator freeze is relaxed.
 - Site hugo publish / `_webprep` copy (checklist only).
 - Inventing GRX registry keys or shipping a `.grx` without a real SDK row.
 - Cloning `.vcxproj`, WiX, RxInstall, or OpenDCL VI trees.
-- `gh repo create` / PR 0b.
+- Creating or publishing a GitHub repository.
 - Passing `-RequireAllShip` on a host-add.
 - Writing PIN/PUK/passwords into files.
 

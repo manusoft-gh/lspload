@@ -1,14 +1,10 @@
-# LspLoad (maintainer tree)
+# LspLoad
 
 Demand-load stub for AutoCAD (ARX), BricsCAD (BRX), and ZWCAD (ZRX). LISP plugin
 authors rename the module to match their `.lsp` and ship it from an installer.
 
-This git tree is the **maintainer work copy**. The intended lab path is
-`P:\Work\LspLoad\GitHub\lspload`. Leave `P:\Work\LspLoad` as the 6.10 gold tree
-(read-only) until cutover.
-
-Product version is the single line in [`VERSION`](VERSION) (currently 6.10).
-Author-facing stub notes are in [`ReadMe.txt`](ReadMe.txt).
+Product version is the single line in [`VERSION`](VERSION). Author-facing stub
+notes are in [`ReadMe.txt`](ReadMe.txt).
 
 ## Licenses
 
@@ -90,12 +86,9 @@ set. Missing script, missing PIN, or `LSPLOAD_SIGN=OFF` is a **no-op**
 (warning, not a configure error). `*-dev-*` presets set `LSPLOAD_SIGN=OFF`.
 Already-Valid signatures are skipped.
 
-This script is git/lab only. Public zips must not include it (later
-`package-zips.ps1` must strip it).
+This script is git/lab only. `package-zips.ps1` omits it from public zips.
 
 ## What not to do here
 
-- Do not import the 42 `.vcxproj` folders, `LspLoad.sln`, `Win32/`, `X64/`,
-  `.tlog`, or `_webprep`.
 - Do not put PIN, PUK, or signing passwords in this tree.
 - Public download zips must not contain signing scripts.
