@@ -1,4 +1,4 @@
-LspLoad 6.10                              2026-10-20
+LspLoad 6.11                              2026-11-05
 
  ManuSoft (http://www.manusoft.com)
 
