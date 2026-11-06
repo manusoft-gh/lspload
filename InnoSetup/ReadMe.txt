@@ -1,9 +1,9 @@
- Inno Setup Lisp Plugin Installer Script 2.2           2026-11-05
+ Inno Setup Lisp Plugin Installer Script 3.0            2026-11-05
  
 Setup script demonstrating how to install a lisp plugin on any or all
 supported versions of AutoCAD, Bricscad, or ZWCAD+.
 
-This kit header (Installer Script 2.2) is independent of the LspLoad
+This kit header (Installer Script 3.0) is independent of the LspLoad
 stub VERSION. It changes when kit UX changes, not with every host.
 
 

@@ -33,7 +33,7 @@ Never access drives X: or B:.
 | Inno Pascal | `InnoSetup/generated/HostsCode.iss` | **GENERATED.** Detect / write / uninstall. |
 | Presets | `CMakePresets.json` | One configure = one arch. No combined `vs2022-full`. |
 | Zipper | `scripts/package-zips.ps1` | **The only copier/zipper.** Do not copy PE into `InnoSetup/LspLoad/` yourself. |
-| Kit header | `InnoSetup/ReadMe.txt` | `Installer Script 2.2` — independent of `VERSION`. Do not bump it for a host add. |
+| Kit header | `InnoSetup/ReadMe.txt` | `Installer Script 3.0` — independent of `VERSION`. Do not bump it for a host add. |
 
 After every JSON edit: `pwsh -File scripts/sync-from-hosts.ps1` then
 `pwsh -File scripts/validate-hosts.ps1` **before** configure. CMake includes
@@ -203,7 +203,7 @@ CMake/Inno stale for the next clone.
 - Product `ReadMe.txt` first line (`LspLoad 6.11   <date>`) — it consumes
   `VERSION`, not a JSON field
 
-Do **not** bump `InnoSetup/ReadMe.txt` (`Installer Script 2.2`) for a host add.
+Do **not** bump `InnoSetup/ReadMe.txt` (`Installer Script 3.0`) for a host add.
 
 ### 5. Configure the matching **full** preset and build that row signed
 
